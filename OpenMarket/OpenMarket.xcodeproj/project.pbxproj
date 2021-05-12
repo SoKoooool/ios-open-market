@@ -16,6 +16,8 @@
 		FF6AB59D26491B160075073E /* OpenMarketItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AB59C26491B160075073E /* OpenMarketItemsList.swift */; };
 		FF6AB5A126491C0F0075073E /* OpenMarketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AB5A026491C0F0075073E /* OpenMarketItem.swift */; };
 		FF6AB5AA26491DED0075073E /* OpenMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AB5A926491DED0075073E /* OpenMarketTests.swift */; };
+		FF6AB5B4264A3D450075073E /* OpenMarketItemPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AB5B3264A3D450075073E /* OpenMarketItemPostData.swift */; };
+		FFBBB99A264A86F50039DA44 /* OpenMarketItemPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AB5B3264A3D450075073E /* OpenMarketItemPostData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 		FF6AB5A726491DED0075073E /* OpenMarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenMarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6AB5A926491DED0075073E /* OpenMarketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMarketTests.swift; sourceTree = "<group>"; };
 		FF6AB5AB26491DED0075073E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF6AB5B3264A3D450075073E /* OpenMarketItemPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMarketItemPostData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 			children = (
 				FF6AB5A026491C0F0075073E /* OpenMarketItem.swift */,
 				FF6AB59C26491B160075073E /* OpenMarketItemsList.swift */,
+				FF6AB5B3264A3D450075073E /* OpenMarketItemPostData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +235,7 @@
 			files = (
 				FF6AB5A126491C0F0075073E /* OpenMarketItem.swift in Sources */,
 				FF6AB59D26491B160075073E /* OpenMarketItemsList.swift in Sources */,
+				FF6AB5B4264A3D450075073E /* OpenMarketItemPostData.swift in Sources */,
 				C70FB0FF25BEF61C00C9924E /* ViewController.swift in Sources */,
 				C70FB0FB25BEF61C00C9924E /* AppDelegate.swift in Sources */,
 				C70FB0FD25BEF61C00C9924E /* SceneDelegate.swift in Sources */,
@@ -241,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBBB99A264A86F50039DA44 /* OpenMarketItemPostData.swift in Sources */,
 				FF6AB5AA26491DED0075073E /* OpenMarketTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
