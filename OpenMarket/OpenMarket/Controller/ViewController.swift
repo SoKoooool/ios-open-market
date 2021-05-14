@@ -8,14 +8,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var firstView: UIView!
+    @IBOutlet var secondView: UIView!
     var segmentedController: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setSegemetedController()
+        secondView.isHidden = true
     }
     
+    @objc func segmentedControllValueChanged(_ sender: UISegmentedControl!) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            firstView.isHidden = false
+            secondView.isHidden = true
+        case 1:
+            firstView.isHidden = true
+            secondView.isHidden = false
+        default:
+            break
+        }
+    }
     
     func setSegemetedController () {
         let items = ["List", "GRID"]
@@ -33,8 +48,8 @@ class ViewController: UIViewController {
         for index in 0..<items.count {
             segmentedController.setWidth(80, forSegmentAt: index)
         }
+        segmentedController.addTarget(self, action: #selector(segmentedControllValueChanged), for: .valueChanged)
         navigationItem.titleView = segmentedController
-    
     }
 
 }
