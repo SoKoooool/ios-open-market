@@ -10,50 +10,6 @@ import XCTest
 
 class OpenMarketTests: XCTestCase {
     
-    func test_URL요청하기() {
-        let url = URL(string: "https://camp-open-market-2.herokuapp.com/items/1")
-        let response = try? String(contentsOf: url!)
-        XCTAssertNotNil(response)
-    }
-    
-    func test_상품목록을_조회해서_itemList로_변환하기() {
-        guard let url = URL(string: "https://camp-open-market-2.herokuapp.com/items/1") else {
-            XCTFail()
-            return
-        }
-        guard let data = try? String(contentsOf: url).data(using: .utf8) else {
-            XCTFail()
-            return
-        }
-        let decoder = JSONDecoder()
-        guard let result = try? decoder.decode(ItemsList.self, from: data) else {
-            XCTFail()
-            return
-        }
-
-        XCTAssertEqual(result.page, 1)
-        XCTAssertEqual(result.items.count, 20)
-        XCTAssertEqual(result.items[0].id, 43)
-        XCTAssertEqual(result.items[0].stock, 5000000)
-        XCTAssertEqual(result.items[0].currency, "USD")
-        XCTAssertEqual(result.items[0].title, "Apple Pencil")
-        XCTAssertEqual(result.items[0].price, 165)
-        XCTAssertEqual(result.items[0].discountedPrice, 160)
-        XCTAssertEqual(result.items[0].registrationDate, 1620633347.3906322)
-    }
-    
-//    func test_상품_등록_폼_인스턴스를_Json으로_변환() {
-//        let form = ItemRegistrationForm(title: "m2맥북", descriptions: "빨리나와", price: 1999, currency: "USD", stock: 100, discounted_price: 1800, images: ["hello"], password: "1234")
-//        let encoder = JSONEncoder()
-//        let resultJson = """
-//        {"images":["hello"],"password":"1234","discounted_price":1800,"price":1999,"stock":100,"title":"m2맥북","descriptions":"빨리나와","currency":"USD"}
-//        """
-//        
-//        guard let jsonData = try? encoder.encode(form) else { XCTFail(); return }
-//        
-//        guard let jsonString = String(data: jsonData, encoding: .utf8) else { XCTFail(); return}
-//        XCTAssertEqual(jsonString, resultJson)
-//    }
     
     func test_상품_삭제_요청하기() {
         guard let url = URL(string: "https://camp-open-market-2.herokuapp.com/item/77")
