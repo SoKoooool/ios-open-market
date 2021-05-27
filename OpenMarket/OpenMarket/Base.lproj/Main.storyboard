@@ -16,27 +16,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-Bz-RHD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="yjW-Pz-etx" kind="embed" id="1Dp-9b-430"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DsF-4v-O62">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="mZ3-ZE-SsK" kind="embed" id="jhk-1f-WoU"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="DMF-aN-7ht">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="IqP-Ju-GQL">
-                            <rect key="frame" x="141.5" y="6" width="131" height="33"/>
+                            <rect key="frame" x="141.5" y="5.5" width="131" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="First"/>
                                 <segment title="Second"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControllValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qcv-ho-cg2"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="gridView" destination="DsF-4v-O62" id="w8Y-mk-RJ2"/>
+                        <outlet property="listView" destination="RHx-Bz-RHD" id="AQc-iW-zx6"/>
                         <outlet property="viewTypeSegmentControl" destination="IqP-Ju-GQL" id="yiM-vT-kAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.75362318840587" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1158" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MQr-Vs-Ebg">
@@ -54,7 +75,50 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSV-y5-59u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82.608695652173921" y="138.61607142857142"/>
+            <point key="canvasLocation" x="429" y="150"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="0qA-y0-bSK">
+            <objects>
+                <viewController id="yjW-Pz-etx" customClass="ListViewController" customModule="OpenMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k5y-lj-vpy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k8A-0f-Br4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="k8A-0f-Br4" secondAttribute="bottom" id="2cu-Jb-L5b"/>
+                            <constraint firstAttribute="trailing" secondItem="k8A-0f-Br4" secondAttribute="trailing" id="Lx6-IR-UZ8"/>
+                            <constraint firstItem="k8A-0f-Br4" firstAttribute="leading" secondItem="k5y-lj-vpy" secondAttribute="leading" id="Tz3-kY-nQ2"/>
+                            <constraint firstItem="k8A-0f-Br4" firstAttribute="top" secondItem="k5y-lj-vpy" secondAttribute="top" id="hpZ-SY-euq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="productTableView" destination="k8A-0f-Br4" id="OQu-vo-8kM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agk-BR-9xF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6376811594205" y="-149.33035714285714"/>
+        </scene>
+        <!--Grid View Controller-->
+        <scene sceneID="aDs-xv-Rcz">
+            <objects>
+                <viewController id="mZ3-ZE-SsK" customClass="GridViewController" customModule="OpenMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q5x-i9-9u3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ade-kf-VTJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="445"/>
         </scene>
     </scenes>
     <resources>

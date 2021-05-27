@@ -10,11 +10,30 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var viewTypeSegmentControl: UISegmentedControl!
     
+    @IBOutlet weak var listView: UIView!
+    @IBOutlet weak var gridView: UIView!
+    
+    let data: [Int] = [1,2,3]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         initSegmentControl()
+        gridView.isHidden = true
+        
     }
+    
+    @IBAction func segmentedControllValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            listView.isHidden = false
+            gridView.isHidden = true
+        }
+        else if sender.selectedSegmentIndex == 1 {
+            listView.isHidden = true
+            gridView.isHidden = false
+        }
+    }
+    
     
     func initSegmentControl() {
         viewTypeSegmentControl.setTitle("LIST", forSegmentAt: 0)
